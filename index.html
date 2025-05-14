@@ -56,13 +56,25 @@
          }
 
          function dari(){
+            var a=aATB.value;
+            var b=bATB.value;
+            var c=cATB.value;
+
+            if(isNaN(a) || isNaN(b) || isNaN(c) || a===0){
+                rez.innerHTML='Ievadi korektus koeficentus! (a!=0)';
+                return;
+            }
+
+            var atb=saknes(a,b, disk(a,b,c));
+
+            if(atb===false){
+                rez.innerHTML='Kvadrātvienādojumam  nav reālu sakņu.'
+            }else{
+                rez.innerHTML=`Saknes: x1= ${atb[0].toFoixed(3)}, x2=${atb[1].toFixed(3)}`;
+            }
 
          }
-        
-
-
-
-
+    
     </script>
 </body>
 </html>
