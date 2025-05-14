@@ -1,38 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(204, 230, 230);
+        }
+        input{
+            width: 50px;
+            height: 25px;
+        }
+        button{
+            width: 150px;
+            height: 50px
+        }
+
+
+    </style>
 </head>
 <body>
     <h1>Kvadrātvienādojuma risinātājs</h1>
+
     <br>
 
     <input type="number" id="aATB" placeholder="a">  
     <input type="number" id="bATB" placeholder="b">
     <input type="number" id="cATB" placeholder="c">
+
     <br>
 
-    <button type="button" onclick="disk()"></button>
-    <span id="rez">Rezultats</span>
+    <button type="button" onclick="dari()">Rezultats</button>
+
+    <br>
+
+    <b><span id="rez"></span></b>
     <script>
-         function disk(a,b,c){
+
+       function disk(a,b,c){
             return b*b-4*a*c;
         }
             
        function  saknes(a,b,D){
-            if(D>=0){
-                var x1=(-b+D)/2*a;
-                var x2=(-b-D)/2*a;
-            }
-            if(D<0){return false}
-        }
-       
-            var a=aATB.value;
-            var b=bATB.value;
-            var c=cATB.value;
+            
+            if(D<0){
+               return false;}
+            else{
+                var x1=(-b+Math.sqrt(D))/(2*a);
+                var x2=(-b-Math.sqrt(D))/(2*a);
 
+                return [x1,x2];
+            }     
+         }
+
+         function dari(){
+
+         }
         
 
 
